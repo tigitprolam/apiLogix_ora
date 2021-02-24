@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS  -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>XMLs, consultas</title>
+
+    <!-- Scripts     -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+
+</head>
+
+<body onload="executaJS()">
+    
+    <main>
+
+        <!-- TO DO: Talvez seja interessante adicionar a data que foi incluído o Pedido, isso é um recurso para quem estiver consultando o PV,
+                        para ele ter segurança que está alterando algo do mês desejado
+                    Outra coisa é incluir o campo do usuário que incluiu o PV. Porque no momento de alterar, sempre é interessante saber quem
+                        fez de forma incorreta para poder informá-lo o que pode ser melhorado para evitarmos a recorrência do problema
+        -->
+
+        <!-- Tela de alteração de representantes -->
+
+        <div class="page" id="alteraRepresentante">
+
+            <div class="container1">
+
+                <h2>XMLs, consultas</h2>
+
+                <form id="formulario" onsubmit="altera">
+
+                    <div class="row">
+
+                        <div class="col">
+
+                            <div class="form-group">
+                                <label for="empresa">
+                                    Empresa
+                                </label>
+                                <input type="text" id="empresa" list="lista_empresa" onblur="onblurEmpresa()" onInput="onInputEmpresa()" class="form-control col-xl-8">
+                                <datalist id="lista_empresa"></datalist>
+                            </div>
+
+                            <div id="pv" class="form-group">
+
+                                <label for="num_pedido">
+                                    Notas Fiscais desejadas
+                                </label>
+                                <input id="num_pedido" type="text" class="form-control col-xl-12" onblur="onblurNumPedido()">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <label for="canais_de_venda">Canais de venda encontrados</label>
+                            <ul id="canais_de_venda" class="list-group">
+                            </ul>
+
+                            <br />
+
+                            <div class="form-group">
+                                <label for="repr_destino">
+                                    Atribuir para o representante:
+                                </label>
+                                <input id="repr_destino" type="text" class="form-control col-xl-1" onblur="onblurReprDestino()">
+                                <input id="nome_repr_destino" type="text" class="form-control col-xl-7" readonly>
+                            </div>
+
+                            <button type="button" class="btn btn-primary" onclick="onclickAlterar()">Gerar XML(s) e fazer download</button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
