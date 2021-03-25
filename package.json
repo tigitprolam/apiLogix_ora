@@ -24,7 +24,7 @@
     "morgan": "^1.10.0",
     "node-cron": "^2.0.3",
     "oracledb": "^5.0.0",
-    "webdanfe": "^1.0.0"
+    "webdanf": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
