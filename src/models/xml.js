@@ -166,7 +166,7 @@ async function consulta(contexto) {
     declaracaoSQL += sqlFetch
   }
 
-    // Indica para a funcao executaSQL que há um campo BLOB no comando SQL
+  // Indica para a funcao executaSQL que há um campo BLOB no comando SQL
   // Campos BLOB, por poder ser grande, sempre são transferidos usando buffer (stream do Node.js)
   const opcoes = {}
   opcoes.campoBLOB = true
